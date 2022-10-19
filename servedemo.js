@@ -4,8 +4,8 @@ const html = fs.readFileSync("./index.html"); //读取文件
 const serve = http.createServer((res, rep) => {
   rep.end(html);
 }); //这个serve 就将静态资源服务化了
-serve.listen(3000);
-console.log("去3000看看");
+serve.listen(3125);
+console.log("去3125看看");
 
 /*
  1.以上就是手写了一个简单的静态资源管理器
