@@ -3,4 +3,4 @@
 #### react 分支
 手动集成一个react开发框架
 #### react-cli
-脚手架配置
+脚手架react开发框架配置
