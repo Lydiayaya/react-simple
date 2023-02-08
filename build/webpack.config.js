@@ -1,6 +1,7 @@
 const path = require("path"); //一个处理文件路径的工具
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //首先引入我们新安装的依赖插件
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //引入html模板插件
+const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //引入clean-webpack-plugin插件
 module.exports = {
   mode: "development", //此行表示我们webpack打包环境是开发环境
   optimization: {
@@ -34,6 +35,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../index.html"),
     }),
+    new CleanWebpackPlugin(), //实例化clean-webpack-plugin插件
   ],
   //通过moudle属性配置babel-loader
   module: {
@@ -132,5 +134,6 @@ module.exports = {
     open: true,
     port: 3500,
     static: "../dist",
+    historyApiFallback: true,
   },
 };
