@@ -1,2 +1,3 @@
 # SimpleApp
-![image](https://user-images.githubusercontent.com/68980240/217496822-38bab1e4-f4f3-4198-b1ed-5e900aac78c1.png)
+![image](https://user-images.githubusercontent.com/68980240/217497077-5009dc38-e838-4666-83f7-790503d44727.png)
+
