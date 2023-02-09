@@ -8,6 +8,7 @@ const babelConfig = {
       },
     ],
     "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
   plugins: ["@babel/plugin-syntax-dynamic-import", ["@babel/plugin-transform-runtime"]]   //就是在此处添加了两个@babel/runtime中的插件
 };

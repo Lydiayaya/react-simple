@@ -18,7 +18,7 @@ module.exports = {
       },
     },
   },
-  entry: "./src/index.js", //项目的入口文件，是我们新建的index.js文件，他的路径是相对于项目根路径，所以谢的是”./src“,而不是../src
+  entry: "./src/index.ts", //项目的入口文件，是我们新建的index.ts文件，他的路径是相对于项目根路径，所以谢的是”./src“,而不是../src
   // ./表示当前目录，../表示当前目录的上级目录
   output: {
     //配置输出信息
@@ -37,14 +37,20 @@ module.exports = {
     }),
     new CleanWebpackPlugin(), //实例化clean-webpack-plugin插件
   ],
+
   //通过moudle属性配置babel-loader
   module: {
     rules: [
       {
-        test: /\.js/,
-        use: ["babel-loader?cacheDirectory=true"],
-        include: path.join(__dirname, "../src"),
+        test: /\.(ts|tsx)$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
+      // {
+      //   test: /\.js/,
+      //   use: ["babel-loader?cacheDirectory=true"],
+      //   include: path.join(__dirname, "../src"),
+      // },
       {
         //最后添加这个依赖插件的配置信息
         test: /\.css$/,
@@ -119,7 +125,7 @@ module.exports = {
   },
   //resolve核心配置
   resolve: {
-    extensions: [".js", ".jsx", ".json"],
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
     alias: {
       pages: path.join(__dirname, "../src/pages"),
       components: path.join(__dirname, "../src/components"),
